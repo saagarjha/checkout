@@ -808,6 +808,7 @@ async function setup(testName: string): Promise<void> {
     sparseCheckout: [],
     sparseCheckoutConeMode: true,
     fetchDepth: 1,
+    fetchJobs: 0,
     fetchTags: false,
     showProgress: true,
     lfs: false,
@@ -820,11 +821,11 @@ async function setup(testName: string): Promise<void> {
     repositoryPath: '',
     sshKey: sshPath ? 'some ssh private key' : '',
     sshKnownHosts: '',
-    sshStrict: true,
     sshUser: '',
     workflowOrganizationId: 123456,
     setSafeDirectory: true,
     githubServerUrl: githubServerUrl
+    sshStrict: true,
   }
 }
 

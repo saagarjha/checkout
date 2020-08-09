@@ -50,6 +50,11 @@ export interface IGitSourceSettings {
   fetchDepth: number
 
   /**
+   * The number of fetches to perform simultaneously when updating submodules
+   */
+  fetchJobs: number
+
+  /**
    * Fetch tags, even if fetchDepth > 0 (default: false)
    */
   fetchTags: boolean

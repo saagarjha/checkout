@@ -113,6 +113,11 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
     # Default: 1
     fetch-depth: ''
 
+    # Number of fetches to perform simultaneously when updating submodules. 0
+    # indicates default (serial updates).
+    # Default: 0
+    fetch-jobs: ''
+
     # Whether to fetch tags, even if fetch-depth > 0.
     # Default: false
     fetch-tags: ''

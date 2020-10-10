@@ -83,7 +83,7 @@ describe('input-helper tests', () => {
     expect(settings.sparseCheckout).toBe(undefined)
     expect(settings.sparseCheckoutConeMode).toBe(true)
     expect(settings.fetchDepth).toBe(1)
-    expect(settings.fetchJobs).toBe(0)
+    expect(settings.fetchJobs).toBe(-1)
     expect(settings.fetchTags).toBe(false)
     expect(settings.showProgress).toBe(true)
     expect(settings.lfs).toBe(false)

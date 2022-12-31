@@ -1790,12 +1790,6 @@ function getInputs() {
             result.fetchDepth = 0;
         }
         core.debug(`fetch depth = ${result.fetchDepth}`);
-        // Fetch jobs
-        result.fetchJobs = Math.floor(Number(core.getInput('fetch-jobs') || '-1'));
-        if (isNaN(result.fetchJobs) || result.fetchJobs < -1) {
-            result.fetchJobs = -1;
-        }
-        core.debug(`fetch jobs = ${result.fetchJobs}`);
         // Fetch tags
         result.fetchTags =
             (core.getInput('fetch-tags') || 'false').toUpperCase() === 'TRUE';
@@ -1820,6 +1814,15 @@ function getInputs() {
         }
         core.debug(`submodules = ${result.submodules}`);
         core.debug(`recursive submodules = ${result.nestedSubmodules}`);
+        // Fetch jobs during submodule update
+        result.fetchJobs = -1;
+        if (result.submodules) {
+            result.fetchJobs = Math.floor(Number(core.getInput('fetch-jobs') || '-1'));
+            if (isNaN(result.fetchJobs) || result.fetchJobs < -1) {
+                result.fetchJobs = -1;
+            }
+            core.debug(`fetch jobs = ${result.fetchJobs}`);
+        }
         // Auth token
         result.authToken = core.getInput('token', { required: true });
         // SSH
